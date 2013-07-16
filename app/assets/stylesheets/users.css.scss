@@ -1,3 +1,40 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1{
+//  padding-top: 50px;
+//  padding-left: 50px;
+  padding: 70px 0px 0px 65px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+form {
+  color: #454545;
+  font-family: 'Noto Sans', sans-serif;
+  padding: 10px 70px ;
+}
+
+h2 {
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+form input, textarea {
+  display: block;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #565656;
+  font-size: 14px;
+}
+
+
+form input:hover, textarea:hover{
+  color: black;
+  background: #C0D7FC;
+};
+
+form input:focus, textarea:focus{
+  color: green;
+  background: #FCF9A2;
+};

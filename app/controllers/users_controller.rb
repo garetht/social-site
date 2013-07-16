@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_filter :authorize, only: [:feed]
+
   def new
     @user = User.new
     @post = Post.new
@@ -11,6 +14,7 @@ class UsersController < ApplicationController
       redirect_to feed_url
     else
       set_flash "Invalid something or other."
+      @post = @user.posts.first
       render :new
     end
   end
