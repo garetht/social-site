@@ -1,0 +1,9 @@
+<h2><%= post.name %></h2>
+<h3>Author: <%= post.user.username %></h3>
+<p><%= post.body %></p>
+
+<ul>
+  <% post.links.each do |link| %>
+    <li><%= link_to link.name, link.url %></li>
+  <% end %>
+</ul>

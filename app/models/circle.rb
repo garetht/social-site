@@ -4,6 +4,8 @@ class Circle < ActiveRecord::Base
   belongs_to :user #as owner
   has_many :circleships
   has_many :friends, class_name: "User", through: :circleships
+  has_many :post_shares
+  has_many :posts, through: :post_shares
 
   validates :name, :user, presence: true
   validates :name, uniqueness: {scope: :user_id, case_sensitive: false}

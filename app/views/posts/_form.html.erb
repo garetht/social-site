@@ -1,0 +1,30 @@
+  <input type="hidden" name="authenticity_token"
+         value="<%= form_authenticity_token %>">
+  <label for="name">Post Title</label>
+  <input type="text" name="<%= prefix %>[name]" value="<%= post.name %>">
+
+  <label for="body">Body</label>
+  <textarea name="<%= prefix %>[body]"><%= post.body %></textarea>
+
+  <% if current_user %>
+    <label>Circles</label>
+    <% current_user.circles.each do |circle| %>
+      <label for="circle<%= circle.id %>"><%= circle.name %></label>
+      <input type="checkbox" id="circle<%= circle.id %>"
+             name="<%= prefix %>[circle_ids][]"
+             value="<%= circle.id %>"
+             <%= "checked" if post.circles.include?(circle) %>>
+    <% end %>
+    <input type="hidden" name="<%= prefix %>[circle_ids][]" value="">
+
+  <% end %>
+
+  <label>Links</label>
+  <% 3.times do |n| %>
+  <label for="link_name<%= n %>">Name</label>
+  <input type="text" name="<%= prefix %>[links_attributes][<%= n %>][name]"
+         id="link_name<%= n %>">
+  <label for="link_url<%= n %>">URL</label>
+  <input type="url" name="<%= prefix %>[links_attributes][<%= n %>][url]">
+  <% end %>
+

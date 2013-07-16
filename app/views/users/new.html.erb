@@ -12,5 +12,9 @@
   <label for="confirm_password">Confirm password</label>
   <input type="password" id="confirm_password" name="user[password_confirmation]">
 
+
+  <h2> Make your first post now </h2>
+<%= render partial: "posts/form", locals: { post: @post, prefix: "user[posts_attributes][0]" } %>
+
   <input type="submit" value="Sign Up">
 </form>

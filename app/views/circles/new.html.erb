@@ -1,19 +1,2 @@
 <h1>New Circle</h1>
-<form action="<%= circles_url %>" method="post">
-  <input type="hidden" name="authenticity_token"
-         value="<%= form_authenticity_token %>">
-  <label for="name">Circle Name</label>
-  <input type="text" id="name" name="circle[name]" value="<%= @circle.name %>">
-
-  <label>Add Friends</label>
-  <% User.all.each do |user| %>
-    <% next if user.username == current_user.username %>
-    <label for="user<%= user.id %>"><%= user.username %></label>
-    <input type="checkbox" id="user<%= user.id %>" name="circle[friend_ids][]"
-           value ="<%= user.id %>"
-           <%= "checked" if @circle.friends.include?(user) %> >
-  <% end %>
-  <input type="hidden" name="circle[user_id]" value="<%= current_user.id %>">
-  <input type="hidden" name="circle[friend_ids][]" value="">
-  <input type="submit" value="create circle">
-</form>
+<%= render partial: "form" %>

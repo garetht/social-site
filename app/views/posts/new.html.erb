@@ -1,4 +1,6 @@
 <h1>NEW POST</h1>
 <form action="<%= posts_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<%= render partial: "form", locals: { post: @post, prefix: "post" } %>
+    <input type="hidden" name="<%= prefix %>[user_id]" value="<%= current_user.id %>">
+  <input type="submit" value="Create Post">
 </form>

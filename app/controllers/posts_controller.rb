@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params[:post])
+    ensure_current_user(@post.user_id)
     if @post.save
       redirect_to @post
     else
@@ -13,5 +14,8 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
 
 end

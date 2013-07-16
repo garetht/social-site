@@ -1,0 +1,10 @@
+<%= render @post %>
+
+<h3>Circles shared with</h3>
+<ul>
+  <% @post.circles.each do |circle| %>
+    <li><%= circle.name %></li>
+  <% end %>
+</ul>
+
+

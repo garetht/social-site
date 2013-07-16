@@ -31,4 +31,12 @@ module SessionsHelper
     end
   end
 
+  def ensure_current_user(id)
+    unless current_user.id == id
+      logout
+      set_flash "Stop hacking us!"
+      redirect_to new_session_url
+    end
+  end
+
 end
