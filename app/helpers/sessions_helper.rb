@@ -2,8 +2,11 @@ module SessionsHelper
 
   def login(user)
     token = SecureRandom::urlsafe_base64
-    user.update_attributes(session_token: token)
-    session[:session_token] = token
+    if user.update_attribute(:session_token, token)
+      session[:session_token] = token
+    else
+      set_flash "#{user.errors.full_messages}"
+    end
   end
 
   def logout

@@ -1,2 +1,9 @@
 <h1>Circles#show</h1>
 <p>Find me in app/views/circles/show.html.erb</p>
+
+<h1><%= @circle.name %></h1>
+<ul>
+<% @circle.friends.each do |friend| %>
+  <li><%= friend.username %></li>
+<% end %>
+</ul>
