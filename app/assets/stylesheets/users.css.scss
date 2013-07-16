@@ -7,24 +7,44 @@ h1{
 //  padding-left: 50px;
   padding: 70px 0px 0px 65px;
   font-family: 'Noto Sans', sans-serif;
+  color: #ffffff;
 }
 
 form {
-  color: #454545;
+  color: #CDCDCD;
   font-family: 'Noto Sans', sans-serif;
   padding: 10px 70px ;
+  outline: 5px solid rgba(50, 50, 50, 0.5);
+  display: block;
+  float: right;
+  background-color:  rgba(10,10,10,0.7);
+  margin-right: 5%;
+}
+
+body
+{
+background-image:url('https://abs.twimg.com/a/1373698031/t1/img/front_page/city-balcony@2x.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Noto Sans', sans-serif;
+  color: #CDCDCD;
 }
 
 h2 {
-  border-bottom: 1px solid black;
   width: 100%;
+}
+
+label{
+  display: inline;
+  padding-left: 10px;
 }
 
 form input, textarea {
   display: block;
   padding: 10px;
   margin: 10px;
-  border: 1px solid #565656;
+  border: 1px solid #989898;
   font-size: 14px;
 }
 
@@ -32,9 +52,21 @@ form input, textarea {
 form input:hover, textarea:hover{
   color: black;
   background: #C0D7FC;
+  outline: none;
 };
 
 form input:focus, textarea:focus{
-  color: green;
+  color: black;
   background: #FCF9A2;
+  outline: none;
 };
+
+a {
+  color: #5DC4F0;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+};
+
