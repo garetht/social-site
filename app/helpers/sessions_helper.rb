@@ -10,8 +10,8 @@ module SessionsHelper
   end
 
   def logout
-    session[:session_token] = nil
     current_user.update_attributes(session_token: nil)
+    session[:session_token] = nil
   end
 
   def current_user
