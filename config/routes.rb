@@ -7,6 +7,8 @@ Friendcircle::Application.routes.draw do
   resource :user, only: [:new, :create, :show]
 
   resources :circles, except: [:index]
+
+  resources :posts, only: [:new, :create]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
