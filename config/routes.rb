@@ -1,4 +1,12 @@
 Friendcircle::Application.routes.draw do
+
+
+
+  resource :session, only: [:new, :create, :destroy]
+
+  resource :user, only: [:new, :create, :show]
+
+  resources :circles, except: [:index]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
